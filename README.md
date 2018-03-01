@@ -1,4 +1,4 @@
-# ![Igni logo](https://raw.githubusercontent.com/igniphp/common/master/logo/full.svg)![Build Status](https://travis-ci.org/igniphp/container.svg?branch=master)
+# ![Igni logo](https://github.com/igniphp/common/blob/master/logo/full.svg) ![Build Status](https://travis-ci.org/igniphp/container.svg?branch=master)
 
 ## Igni Container
 Licensed under MIT License.
