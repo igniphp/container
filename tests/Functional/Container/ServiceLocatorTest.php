@@ -4,7 +4,7 @@ namespace IgniTest\Unit\Container;
 
 use Igni\Container\ServiceLocator;
 use IgniTest\Fixtures;
-use Igni\Utils\TestCase;
+use PHPUnit\Framework\TestCase;
 
 final class ServiceLocatorTest extends TestCase
 {

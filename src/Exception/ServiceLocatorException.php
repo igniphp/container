@@ -2,8 +2,8 @@
 
 namespace Igni\Container\Exception;
 
-use Igni\Exception\RuntimeException;
 use Psr\Container\ContainerExceptionInterface;
+use RuntimeException;
 
 class ServiceLocatorException extends RuntimeException implements ContainerExceptionInterface
 {

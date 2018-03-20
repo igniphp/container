@@ -2,8 +2,8 @@
 
 namespace Igni\Container\Exception;
 
-use Igni\Exception\RuntimeException;
 use Psr\Container\ContainerExceptionInterface;
+use RuntimeException;
 
 class DependencyResolverException extends RuntimeException implements ContainerExceptionInterface
 {

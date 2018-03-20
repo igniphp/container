@@ -1,8 +1,14 @@
 {
   "name": "igniphp/container",
-  "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "PSR-11 compatible dependency container",
+  "keywords": [
+    "PSR-11",
+    "Autowiring",
+    "Fast",
+    "Dependency Container",
+    "Service Locator",
+    "PHP 7"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -11,8 +17,7 @@
     }
   ],
   "require": {
-    "php": ">=7.1.0",
-    "igniphp/common": ">=1.0.0",
+    "php": "^7.1.0",
     "psr/container": "~1.0"
   },
   "require-dev": {

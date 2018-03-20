@@ -3,7 +3,7 @@
 namespace IgniTest\Unit\Container\DependencyResolver;
 
 use Igni\Container\DependencyResolver\Argument;
-use Igni\Utils\TestCase;
+use PHPUnit\Framework\TestCase;
 
 final class ArgumentTest extends TestCase
 {

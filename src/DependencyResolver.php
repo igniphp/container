@@ -4,14 +4,19 @@ namespace Igni\Container;
 
 use Igni\Container\DependencyResolver\Argument;
 use Igni\Container\Exception\DependencyResolverException;
-use Igni\Utils\ReflectionApi;
 use Psr\Container\ContainerInterface;
+use ReflectionClass;
 use ReflectionMethod;
 
 final class DependencyResolver
 {
     /** @var ContainerInterface */
     private $container;
+
+    /**
+     * @var ReflectionClass[]
+     */
+    private static $reflections = [];
 
     public function __construct(ContainerInterface $container)
     {
@@ -25,7 +30,7 @@ final class DependencyResolver
 
     public function resolve(string $className, array $bindings = [])
     {
-        $reflection = ReflectionApi::reflectClass($className);
+        $reflection = self::reflectClass($className);
 
         if (!$reflection->isInstantiable()) {
             throw DependencyResolverException::forNonInstantiableClass($className);
@@ -86,5 +91,14 @@ final class DependencyResolver
         }
 
         return $values;
+    }
+
+    private static function reflectClass(string $class): ReflectionClass
+    {
+        if (isset(self::$reflections[$class])) {
+            return self::$reflections[$class];
+        }
+
+        return self::$reflections[$class] = new ReflectionClass($class);
     }
 }

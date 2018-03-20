@@ -3,17 +3,18 @@
 namespace IgniTest\Unit\Container;
 
 use Igni\Container\DependencyResolver;
-use Igni\Utils\TestCase;
 use IgniTest\Fixtures\A;
 use IgniTest\Fixtures\B;
 use IgniTest\Fixtures\Foo;
+use Mockery;
+use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
 class DependencyResolverTest extends TestCase
 {
     public function testCanInstantiate(): void
     {
-        $container = $this->mock(ContainerInterface::class);
+        $container = Mockery::mock(ContainerInterface::class);
 
         $instance = new DependencyResolver($container);
         self::assertInstanceOf(DependencyResolver::class, $instance);
@@ -21,7 +22,7 @@ class DependencyResolverTest extends TestCase
 
     public function testResolve(): void
     {
-        $psrContainerMock = $this->mock(ContainerInterface::class);
+        $psrContainerMock = Mockery::mock(ContainerInterface::class);
         $psrContainerMock->shouldReceive('has')->with(A::class)->andReturn(true);
         $psrContainerMock->shouldReceive('has')->with(B::class)->andReturn(true);
         $psrContainerMock->shouldReceive('get')->with(A::class, Foo::class)->andReturn(new A(1));
